@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WAChatViewController.swift
 //  WhatsAppClone
 //
 //  Created by Agustin Castaneda on 26/02/20.
@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import StreamChat
+import StreamChatCore
 
-class ViewController: UIViewController {
 
+class WAChatViewController: ChatViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("❕\(Self.self).\(#function)")
     }
 
-
 }
-

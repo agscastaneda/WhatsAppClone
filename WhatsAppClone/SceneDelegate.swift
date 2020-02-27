@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import StreamChat
+import StreamChatCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if let navigationController = window?.rootViewController as? UINavigationController, let channelsViewController = navigationController.viewControllers.first as? ChannelsViewController {
+            channelsViewController.channelsPresenter = ChannelsPresenter(filter: .key("members", .in(["wispy-mud-6"])), showChannelStatuses: true)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

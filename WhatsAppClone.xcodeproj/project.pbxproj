@@ -3,27 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7364C899CBBB4D457812BB0B /* Pods_WhatsAppClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07669FCB1FD0057C13B488B2 /* Pods_WhatsAppClone.framework */; };
 		FDE784ED2407753B00555101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784EC2407753B00555101 /* AppDelegate.swift */; };
 		FDE784EF2407753B00555101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784EE2407753B00555101 /* SceneDelegate.swift */; };
-		FDE784F12407753B00555101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784F02407753B00555101 /* ViewController.swift */; };
+		FDE784F12407753B00555101 /* WAChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784F02407753B00555101 /* WAChannelsViewController.swift */; };
 		FDE784F42407753B00555101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE784F22407753B00555101 /* Main.storyboard */; };
 		FDE784F62407753F00555101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE784F52407753F00555101 /* Assets.xcassets */; };
 		FDE784F92407753F00555101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE784F72407753F00555101 /* LaunchScreen.storyboard */; };
+		FDE785012407801A00555101 /* WAChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE785002407801A00555101 /* WAChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07669FCB1FD0057C13B488B2 /* Pods_WhatsAppClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C133ABA5254C66B1769B1402 /* Pods-WhatsAppClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.release.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.release.xcconfig"; sourceTree = "<group>"; };
+		FDE62F8E5193E432FA51BD96 /* Pods-WhatsAppClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.debug.xcconfig"; sourceTree = "<group>"; };
 		FDE784E92407753B00555101 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE784EC2407753B00555101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDE784EE2407753B00555101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FDE784F02407753B00555101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDE784F02407753B00555101 /* WAChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAChannelsViewController.swift; sourceTree = "<group>"; };
 		FDE784F32407753B00555101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDE784F52407753F00555101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDE784F82407753F00555101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDE784FA2407753F00555101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE785002407801A00555101 /* WAChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7364C899CBBB4D457812BB0B /* Pods_WhatsAppClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8578932F356DDAF818759F29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07669FCB1FD0057C13B488B2 /* Pods_WhatsAppClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C65199FF3BAAE2CFEF851D0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDE62F8E5193E432FA51BD96 /* Pods-WhatsAppClone.debug.xcconfig */,
+				C133ABA5254C66B1769B1402 /* Pods-WhatsAppClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FDE784E02407753B00555101 = {
 			isa = PBXGroup;
 			children = (
 				FDE784EB2407753B00555101 /* WhatsAppClone */,
 				FDE784EA2407753B00555101 /* Products */,
+				C65199FF3BAAE2CFEF851D0A /* Pods */,
+				8578932F356DDAF818759F29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +84,8 @@
 			children = (
 				FDE784EC2407753B00555101 /* AppDelegate.swift */,
 				FDE784EE2407753B00555101 /* SceneDelegate.swift */,
-				FDE784F02407753B00555101 /* ViewController.swift */,
+				FDE784F02407753B00555101 /* WAChannelsViewController.swift */,
+				FDE785002407801A00555101 /* WAChatViewController.swift */,
 				FDE784F22407753B00555101 /* Main.storyboard */,
 				FDE784F52407753F00555101 /* Assets.xcassets */,
 				FDE784F72407753F00555101 /* LaunchScreen.storyboard */,
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDE784FD2407753F00555101 /* Build configuration list for PBXNativeTarget "WhatsAppClone" */;
 			buildPhases = (
+				35F26E0E0243CC8C887CD667 /* [CP] Check Pods Manifest.lock */,
 				FDE784E52407753B00555101 /* Sources */,
 				FDE784E62407753B00555101 /* Frameworks */,
 				FDE784E72407753B00555101 /* Resources */,
+				832E3BF866A1889B259FF609 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +162,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35F26E0E0243CC8C887CD667 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhatsAppClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		832E3BF866A1889B259FF609 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FDE784E52407753B00555101 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDE784F12407753B00555101 /* ViewController.swift in Sources */,
+				FDE785012407801A00555101 /* WAChatViewController.swift in Sources */,
+				FDE784F12407753B00555101 /* WAChannelsViewController.swift in Sources */,
 				FDE784ED2407753B00555101 /* AppDelegate.swift in Sources */,
 				FDE784EF2407753B00555101 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +354,7 @@
 		};
 		FDE784FE2407753F00555101 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDE62F8E5193E432FA51BD96 /* Pods-WhatsAppClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +373,7 @@
 		};
 		FDE784FF2407753F00555101 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C133ABA5254C66B1769B1402 /* Pods-WhatsAppClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
