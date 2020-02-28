@@ -15,6 +15,7 @@
 		FDE784F62407753F00555101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE784F52407753F00555101 /* Assets.xcassets */; };
 		FDE784F92407753F00555101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDE784F72407753F00555101 /* LaunchScreen.storyboard */; };
 		FDE785012407801A00555101 /* WAChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE785002407801A00555101 /* WAChatViewController.swift */; };
+		FDE785032408667C00555101 /* UIColor+WhatsAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE785022408667C00555101 /* UIColor+WhatsAppStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FDE784F82407753F00555101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDE784FA2407753F00555101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDE785002407801A00555101 /* WAChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAChatViewController.swift; sourceTree = "<group>"; };
+		FDE785022408667C00555101 /* UIColor+WhatsAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+WhatsAppStyle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				FDE784F52407753F00555101 /* Assets.xcassets */,
 				FDE784F72407753F00555101 /* LaunchScreen.storyboard */,
 				FDE784FA2407753F00555101 /* Info.plist */,
+				FDE785022408667C00555101 /* UIColor+WhatsAppStyle.swift */,
 			);
 			path = WhatsAppClone;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				FDE785012407801A00555101 /* WAChatViewController.swift in Sources */,
 				FDE784F12407753B00555101 /* WAChannelsViewController.swift in Sources */,
 				FDE784ED2407753B00555101 /* AppDelegate.swift in Sources */,
+				FDE785032408667C00555101 /* UIColor+WhatsAppStyle.swift in Sources */,
 				FDE784EF2407753B00555101 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
