@@ -6,6 +6,11 @@ target 'WhatsAppClone' do
   use_frameworks!
 
   # Pods for WhatsAppClone
-  pod 'StreamChat'
+  # Official StreamChat
+  # pod 'StreamChat'
+
+  #Local version of StreamChat
+  pod 'StreamChat', :path => '../stream-chat-swift/'
+
 
 end

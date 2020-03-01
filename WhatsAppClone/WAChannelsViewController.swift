@@ -44,6 +44,24 @@ class WAChannelsViewController: ChannelsViewController {
         print("❕\(Self.self).\(#function)")
         return chatViewController
     }
+    
+    override func channelCell(at indexPath: IndexPath, channelPresenter: ChannelPresenter) -> UITableViewCell {
+        // For now, get the default channel cell.
+        let cell = super.channelCell(at: indexPath, channelPresenter: channelPresenter)
+
+        // We need to check if the returned cell is ChannelTableViewCell.
+        guard let channelCell = cell as? ChannelTableViewCell else {
+            return cell
+        }
+        
+        // Check the number of unread messages.
+        if channelPresenter.channel.currentUnreadCount > 0 {
+            // Add the info about unread messages to the cell.
+            channelCell.update(info: "  \(channelPresenter.channel.currentUnreadCount)  ", isUnread: true)
+        }
+
+        return channelCell
+    }
 
 
 }

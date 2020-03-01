@@ -31,7 +31,7 @@ PODS:
   - SwiftyGif (5.1.1)
 
 DEPENDENCIES:
-  - StreamChat
+  - StreamChat (from `../stream-chat-swift/`)
 
 SPEC REPOS:
   trunk:
@@ -45,9 +45,12 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - Starscream
-    - StreamChat
     - StreamChatCore
     - SwiftyGif
+
+EXTERNAL SOURCES:
+  StreamChat:
+    :path: "../stream-chat-swift/"
 
 SPEC CHECKSUMS:
   GzipSwift: 5592f4d62b641e04d06443ba471f8ed76b1363e4
@@ -64,6 +67,6 @@ SPEC CHECKSUMS:
   StreamChatCore: c5a83f7c544239a4eaee312d48cdd24e56c7645a
   SwiftyGif: f7702483db93586a41f04f4927cd682852a2fa10
 
-PODFILE CHECKSUM: 3bbe58c7f40cdb21e01f83b17441117924e890cb
+PODFILE CHECKSUM: 33a80b074c0e8baac9c8981790fb68fcf60a825e
 
 COCOAPODS: 1.9.0

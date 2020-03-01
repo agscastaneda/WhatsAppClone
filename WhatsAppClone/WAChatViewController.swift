@@ -51,10 +51,10 @@ class WAChatViewController: ChatViewController {
     }
     
     private func addFileTypes(){
-        composerAddFileTypes = [.camera,.photo,.file,.custom(icon: UIImage(systemName: "mappin.circle"), title: "Location", .custom(1), {_ in
-            print("Location touched") // move to fuction
-        }),.custom(icon: UIImage(systemName: "person.circle"), title: "Contact", .custom(2), {_ in
-            print("Contact touched") // move to fuction
+        composerAddFileTypes = [.camera,.photo,.file,.custom(icon: UIImage(systemName: "mappin.circle"), title: "Location", .custom("Uno"), {val in
+            print("Location touched \(val)") // move to fuction
+        }),.custom(icon: UIImage(systemName: "person.circle"), title: "Contact", .custom(2), {val in
+            print("Contact touched \(val)") // move to fuction
         })]
     }
     
