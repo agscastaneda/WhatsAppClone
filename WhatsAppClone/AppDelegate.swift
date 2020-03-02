@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Client.config = .init(apiKey: "b67pax5b2wdq"/*, logOptions: .info*/)
-        Client.shared.set(user: User(id: "wispy-mud-6",
-                                      name: "Wispy mud"),
-                          token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoid2lzcHktbXVkLTYifQ.D6T54c-8KL7kxVFwOW0FTkrzPN0hb-J2zlfcE98WaDE")
+        Client.shared.set(user: User(id: "broad-mountain-9",
+                                      name: "Broad mountain"),
+                          token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYnJvYWQtbW91bnRhaW4tOSJ9.okQf2SzolNQRnmVkXVQehihmX9L57r9yt-pxkA_F_NY")
         return true
     }
 

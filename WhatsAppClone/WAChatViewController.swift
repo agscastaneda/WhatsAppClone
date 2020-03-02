@@ -9,6 +9,7 @@
 import UIKit
 import StreamChat
 import StreamChatCore
+import RxSwift
 
 
 class WAChatViewController: ChatViewController {
@@ -17,6 +18,14 @@ class WAChatViewController: ChatViewController {
         let view = UIView()
         view.backgroundColor = .WA_ligthGray
         return view
+    }()
+    
+    private lazy var plusBtn: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "plus")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .systemBlue
+        button.addTarget(self, action: #selector(showActionSheet), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -31,7 +40,7 @@ class WAChatViewController: ChatViewController {
     
     private func styleComposerView(){
         
-        style.composer.edgeInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
+        style.composer.edgeInsets = .init(top: 8, left: 48, bottom: 8, right: 8)
         style.composer.backgroundColor = .white
         style.composer.textColor = .black
         style.composer.height = 32
@@ -51,11 +60,12 @@ class WAChatViewController: ChatViewController {
     }
     
     private func addFileTypes(){
-        composerAddFileTypes = [.camera,.photo,.file,.custom(icon: UIImage(systemName: "mappin.circle"), title: "Location", .custom("Uno"), {val in
-            print("Location touched \(val)") // move to fuction
-        }),.custom(icon: UIImage(systemName: "person.circle"), title: "Contact", .custom(2), {val in
-            print("Contact touched \(val)") // move to fuction
-        })]
+//        composerAddFileTypes = [.camera,.photo,.file,.custom(icon: UIImage(systemName: "mappin.circle"), title: "Location", .custom(0), {val in
+//            print("Location touched \(val)")
+//        }),.custom(icon: UIImage(systemName: "person.circle"), title: "Contact", .custom(1), {val in
+//            print("Contact touched \(val)")
+//        })]
+        composerAddFileTypes = [] // empty to hide defult + button
     }
     
     private func configureComposerView(){
@@ -74,9 +84,46 @@ class WAChatViewController: ChatViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
+        
+        composerContainer.addSubview(plusBtn)
+        plusBtn.snp.makeConstraints { make in
+            make.centerY.equalTo(composerView.snp.centerY)
+            make.right.equalTo(composerView.snp.left).offset(-8)
+            make.height.equalTo(32)
+            make.width.equalTo(32)
+        }
     }
     
-    
+    @objc private func showActionSheet(){
+        print("Show action sheet here")
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let actionCamera = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { _ in
+            print("Camera")
+            self.showImagePicker(composerAddFileViewSourceType: .photo(.camera))
+        }
+        
+        let actionPhoto = UIAlertAction(title: "Photo & Video Library", style: UIAlertAction.Style.default) { _ in
+            print("Photo & Video Library")
+            self.showImagePicker(composerAddFileViewSourceType: .photo(.savedPhotosAlbum))
+        }
+        let actionDocument =  UIAlertAction(title: "Document", style: UIAlertAction.Style.default) { _ in
+            print("Document")
+            self.showDocumentPicker()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        actionCamera.setValue(UIImage(systemName: "camera"), forKey: "image")
+        actionPhoto.setValue(UIImage(systemName: "photo"), forKey: "image")
+        actionDocument.setValue(UIImage(systemName: "doc.text"), forKey: "image")
+        
+        alert.addAction(actionCamera)
+        alert.addAction(actionPhoto)
+        alert.addAction(actionDocument)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 
