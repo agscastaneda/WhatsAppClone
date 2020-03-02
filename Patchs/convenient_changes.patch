@@ -1,0 +1,38 @@
+diff --git a/Sources/UI/Channels/ChannelTableViewCell.swift b/Sources/UI/Channels/ChannelTableViewCell.swift
+index 152b4cf..88ebac2 100644
+--- a/Sources/UI/Channels/ChannelTableViewCell.swift
++++ b/Sources/UI/Channels/ChannelTableViewCell.swift
+@@ -205,7 +205,10 @@ open class ChannelTableViewCell: UITableViewCell, Reusable {
+         
+         if isUnread {
+             infoLabel.font = style.messageUnreadFont
+-            infoLabel.textColor = style.messageUnreadColor
++            infoLabel.textColor = .white//style.messageUnreadColor
++            infoLabel.clipsToBounds = true
++            infoLabel.layer.cornerRadius = infoLabel.font.pointSize * 1.2 / 2 //layer.cornerRadius = label.font.pointSize * 1.2 / 2
++            infoLabel.backgroundColor = .chatBlue
+         } else {
+             infoLabel.font = style.dateFont
+             infoLabel.textColor = style.dateColor
+diff --git a/Sources/UI/Chat/Chat View Controller/ChatViewController+Composer.swift b/Sources/UI/Chat/Chat View Controller/ChatViewController+Composer.swift
+index b1599e3..cb0752c 100644
+--- a/Sources/UI/Chat/Chat View Controller/ChatViewController+Composer.swift	
++++ b/Sources/UI/Chat/Chat View Controller/ChatViewController+Composer.swift	
+@@ -442,7 +442,7 @@ extension ChatViewController {
+         }
+     }
+     
+-    private func showImagePicker(composerAddFileViewSourceType sourceType: ComposerAddFileView.SourceType) {
++    public func showImagePicker(composerAddFileViewSourceType sourceType: ComposerAddFileView.SourceType) {
+         guard case .photo(let pickerSourceType) = sourceType else {
+             return
+         }
+@@ -472,7 +472,7 @@ extension ChatViewController {
+         hideAddFileView()
+     }
+     
+-    private func showDocumentPicker() {
++    public func showDocumentPicker() {
+         let documentPickerViewController = UIDocumentPickerViewController(documentTypes: [.anyFileType], in: .import)
+         documentPickerViewController.allowsMultipleSelection = true
+         
