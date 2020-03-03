@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7364C899CBBB4D457812BB0B /* Pods_WhatsAppClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07669FCB1FD0057C13B488B2 /* Pods_WhatsAppClone.framework */; };
+		FDDECCF4240E0CD600577046 /* lorem-ipsum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FDDECCF3240E0CD600577046 /* lorem-ipsum.pdf */; };
 		FDE784ED2407753B00555101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784EC2407753B00555101 /* AppDelegate.swift */; };
 		FDE784EF2407753B00555101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784EE2407753B00555101 /* SceneDelegate.swift */; };
 		FDE784F12407753B00555101 /* WAChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE784F02407753B00555101 /* WAChannelsViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		07669FCB1FD0057C13B488B2 /* Pods_WhatsAppClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C133ABA5254C66B1769B1402 /* Pods-WhatsAppClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.release.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.release.xcconfig"; sourceTree = "<group>"; };
+		FDDECCF3240E0CD600577046 /* lorem-ipsum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "lorem-ipsum.pdf"; sourceTree = "<group>"; };
 		FDE62F8E5193E432FA51BD96 /* Pods-WhatsAppClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.debug.xcconfig"; sourceTree = "<group>"; };
 		FDE784E92407753B00555101 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE784EC2407753B00555101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FDDECCF2240E0CC100577046 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				FDDECCF3240E0CD600577046 /* lorem-ipsum.pdf */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
 		FDE784E02407753B00555101 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		FDE784EB2407753B00555101 /* WhatsAppClone */ = {
 			isa = PBXGroup;
 			children = (
+				FDDECCF2240E0CC100577046 /* files */,
 				FDE784EC2407753B00555101 /* AppDelegate.swift */,
 				FDE784EE2407753B00555101 /* SceneDelegate.swift */,
 				FDE784F02407753B00555101 /* WAChannelsViewController.swift */,
@@ -158,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDE784F92407753F00555101 /* LaunchScreen.storyboard in Resources */,
+				FDDECCF4240E0CD600577046 /* lorem-ipsum.pdf in Resources */,
 				FDE784F62407753F00555101 /* Assets.xcassets in Resources */,
 				FDE784F42407753B00555101 /* Main.storyboard in Resources */,
 			);

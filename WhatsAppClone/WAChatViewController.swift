@@ -60,11 +60,11 @@ class WAChatViewController: ChatViewController {
     }
     
     private func addFileTypes(){
-//        composerAddFileTypes = [.camera,.photo,.file,.custom(icon: UIImage(systemName: "mappin.circle"), title: "Location", .custom(0), {val in
-//            print("Location touched \(val)")
-//        }),.custom(icon: UIImage(systemName: "person.circle"), title: "Contact", .custom(1), {val in
-//            print("Contact touched \(val)")
-//        })]
+        //        composerAddFileTypes = [.camera,.photo,.file,.custom(icon: UIImage(systemName: "mappin.circle"), title: "Location", .custom(0), {val in
+        //            print("Location touched \(val)")
+        //        }),.custom(icon: UIImage(systemName: "person.circle"), title: "Contact", .custom(1), {val in
+        //            print("Contact touched \(val)")
+        //        })]
         composerAddFileTypes = [] // empty to hide defult + button
     }
     
@@ -111,18 +111,80 @@ class WAChatViewController: ChatViewController {
             print("Document")
             self.showDocumentPicker()
         }
+        let actionCustomImg =  UIAlertAction(title: "Custom (Upload Local Image)", style: UIAlertAction.Style.default) { _ in
+            print("Custom")
+            self.uploadImage()
+        }
+        
+        let actionCustomPDF =  UIAlertAction(title: "Custom (Upload Local PDF)", style: UIAlertAction.Style.default) { _ in
+            print("Custom")
+            self.uploadPDF()
+        }
+
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         
         actionCamera.setValue(UIImage(systemName: "camera"), forKey: "image")
         actionPhoto.setValue(UIImage(systemName: "photo"), forKey: "image")
         actionDocument.setValue(UIImage(systemName: "doc.text"), forKey: "image")
+        actionCustomImg.setValue(UIImage(systemName: "ellipsis.circle"), forKey: "image")
+        actionCustomPDF.setValue(UIImage(systemName: "arrow.up.doc.fill"), forKey: "image")
         
         alert.addAction(actionCamera)
         alert.addAction(actionPhoto)
         alert.addAction(actionDocument)
+        alert.addAction(actionCustomImg)
+        alert.addAction(actionCustomPDF)
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension WAChatViewController{
+    
+    fileprivate func uploadImage(){
+        let image = UIImage(named: "mariposa")!
+        // Upload UIImage.
+        if let imageData = image.jpegData(compressionQuality: 0.9) {
+            self.channelPresenter?.channel.sendImage(fileName: "mariposa",
+                              mimeType: AttachmentFileType.jpeg.mimeType,
+                              imageData: imageData)
+                .observeOn(MainScheduler.instance)
+                .subscribe(
+                    onNext: { response in
+                        print(response.progress)
+                        if let url = response.result{
+                            self.channelPresenter?.send(text:"\(url.absoluteString)")
+                            .subscribe(
+                                onNext: { [weak self] messageResponse in
+                                    if messageResponse.message.type == .error {
+                                        self?.show(error: ClientError.errorMessage(messageResponse.message))
+                                    }
+                                },
+                                onError: { [weak self] in
+                                    self?.composerView.reset()
+                                    self?.show(error: $0)
+                                },
+                                onCompleted: { [weak self] in self?.composerView.reset() })
+                                .disposed(by: self.disposeBag)
+                        }
+                        
+                },
+                    onCompleted: {
+                        print("The image was uploaded")
+                        self.send()
+                })
+                .disposed(by: disposeBag)
+        }
+    }
+    
+    fileprivate func uploadPDF(){
+        guard let url = Bundle.main.url(forResource: "lorem-ipsum", withExtension: "pdf")else {
+            return
+        }
+        
+        self.composerView.addFileUploaderItem(UploaderItem(channel: self.channelPresenter!.channel, url: url))
     }
 }
 
