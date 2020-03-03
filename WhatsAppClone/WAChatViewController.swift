@@ -38,6 +38,8 @@ class WAChatViewController: ChatViewController {
         addComponserContainerBck()
         composerView.sendButton.snp.updateConstraints { make in
             make.bottom.equalToSuperview().offset(-40)
+        }
+        
         composerView.clipsToBounds = false
         composerView.layoutIfNeeded()
     }
